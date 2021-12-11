@@ -2,7 +2,7 @@
 
 ## Hardware Related Files
 
-This folder of the project contains **electrical circuits, CAD Models, and the codes** associated withh the circuits needed for the physical CoBAND units.
+This folder of the project contains **electrical circuit and CAD Models** associated withh the circuits needed for the physical CoBAND units.
 
 
 ### Following are the CAD models for physical unit :
