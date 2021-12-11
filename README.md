@@ -25,8 +25,8 @@ The final version of the application has been deployed on this repository.
 ### Log in page 
 ![Screenshot_1639246616](https://user-images.githubusercontent.com/72869428/145687395-e030ee9c-5318-4abb-9f54-59764750f54a.png)
 ### Loading page
-![Screenshot_1639246629](https://user-images.githubusercontent.com/72869428/145687569-793ff5c9-7e59-4074-8a95-8eb9dac56514.png)
-### App drawer
+![Screenshot_1639246629](https://user-images.githubusercontent.com/72869428/145687627-caad0e55-5da7-4b26-9416-404c181adb9c.png)
+### Hamburger Menu
 ![Screenshot_1639246603](https://user-images.githubusercontent.com/72869428/145687491-17fb7808-d4b3-420b-ae75-84f858d1b568.png)
 ###  Tab 1
 ![Screenshot_1639246605](https://user-images.githubusercontent.com/72869428/145687413-564e7e6f-ef38-473f-8007-65721d99fec7.png)
