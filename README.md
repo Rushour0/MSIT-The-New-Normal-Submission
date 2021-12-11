@@ -18,5 +18,23 @@ The final version's admin-side dashboard is on this [site](https://coband19.jxt1
 
 The final version of the application has been deployed on this repository.
 
-## Screenshots of admin-side dashboard & mobile application
+## Screenshots of mobile application
+
+### Splash Screen
+![Screenshot_1637150212](https://user-images.githubusercontent.com/72869428/145687374-c51aaf65-4122-43c0-b95d-8fd2c0e9e499.png)
+### Log in page 
+![Screenshot_1639246616](https://user-images.githubusercontent.com/72869428/145687395-e030ee9c-5318-4abb-9f54-59764750f54a.png)
+### Loading page
+![Screenshot_1639246629](https://user-images.githubusercontent.com/72869428/145687516-ba3ad009-3cf9-4bc4-a8aa-08b1568ba161.png)
+### App drawer
+![Screenshot_1639246603](https://user-images.githubusercontent.com/72869428/145687491-17fb7808-d4b3-420b-ae75-84f858d1b568.png)
+###  Tab 1
+![Screenshot_1639246605](https://user-images.githubusercontent.com/72869428/145687413-564e7e6f-ef38-473f-8007-65721d99fec7.png)
+###  Tab 2
+![Screenshot_1637149289](https://user-images.githubusercontent.com/72869428/145687427-61663ba0-c4de-49ea-bda3-33bfe0adeabf.png)
+###  Tab 3
+![Screenshot_1639246609](https://user-images.githubusercontent.com/72869428/145687436-5d95a1a6-7e15-437c-b4c8-5b6d5c420d50.png)
+
+
+## Screenshots for the admin-side dashboard
 
