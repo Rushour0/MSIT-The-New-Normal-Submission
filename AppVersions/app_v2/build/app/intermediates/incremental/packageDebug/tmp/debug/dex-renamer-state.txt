@@ -1,4 +1,0 @@
-#Sat Dec 11 22:41:45 IST 2021
-base.0=D\:\\App Dev - Flutter\\MSIT The New Normal Submission\\app_v2\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-renamed.0=classes.dex
-path.0=classes.dex

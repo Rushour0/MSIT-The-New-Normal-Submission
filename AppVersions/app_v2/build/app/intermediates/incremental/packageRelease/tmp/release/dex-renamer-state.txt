@@ -1,4 +1,0 @@
-#Sat Dec 11 22:56:43 IST 2021
-base.0=D\:\\App Dev - Flutter\\MSIT The New Normal Submission\\AppVersions\\app_v2\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
