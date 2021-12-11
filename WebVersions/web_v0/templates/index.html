@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+
+    <title> CoBAND-19 dashboard </title>
+
+    <!--Headings -->
+
+
+    <!-- Bootstraps Java Scipts Links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+
+
+    <!-- JQuery links  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <!--High CHART LIVE  -->
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/highcharts-more.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+
+
+</head>
+
+<body style="background-color: #889EEA ; text-align:center">
+
+    <h1 style="margin-top: 25px;">CoBAND-19</h1>
+    <p> Ogranizational Covid Tracking Bands </p>
+    <style>
+        img {
+            width: 25%;
+            height: 25%;
+        }
+    </style>
+    <img src="https://raw.githubusercontent.com/jxtin/CoBand19/main/Web%20Versions/web_v1/templates/main_icon.png"
+        alt="Icon">
+
+
+    <div
+        style="background-color: white ; text-align:center; margin-top: 50px; margin-left: 700px; width: 500px; border-radius: 1000px;">
+        <h1 class="HeartRate"> Sensor : </h1>
+    </div>
+    <div class="jumbotron" style="background-color: #889EEA ; text-align:center">
+    </div>
+    <div class="container-fluid">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="container-fluid" id="data-container">
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        var chart;
+        const timezone = new Date().getTimezoneOffset();
+        Highcharts.setOptions({
+            global: {
+                timezoneOffset: timezone
+            }
+        });
+
+
+
+        function requestData() {
+            // Ajax call to get the Data from Flask
+            try {
+                var requests = $.get('/data');
+                var tm = requests.done(function (result) {
+                    console.log(result);
+                    var series = chart.series[0],
+                        shift = series.data.length > 20;
+
+                    // add the point
+                    chart.series[0].addPoint(result, true, shift);
+                    console.log(result);
+                    if (result[1] > 120) {
+                        //alert("High Heart")
+                        console.log("Dard")
+                        $(".HeartRate").css("background-color", "red");
+                    }
+                    else {
+                        $(".HeartRate").css("background-color", "white");
+                    }
+                    $(".HeartRate").text("Heart Rate is : " + Math.round(result[1]))
+                    // call it again after few seconds
+                    setTimeout(requestData, 4000);
+                });
+            }
+            catch (error) {
+                console.log(error);
+                console.log("Ran out of data, will try calling again")
+                setTimeout(requestData, 4000);
+            }
+        }
+        $(document).ready(function () {
+            chart = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'data-container',
+                    defaultSeriesType: 'spline', // change the type to spline, line, area
+                    events: {
+                        load: requestData
+                    }
+                },
+                title: {
+                    text: 'Live HeartRate data'
+                },
+                xAxis: {
+                    type: 'datetime',
+                    tickPixelInterval: 150,
+                    maxZoom: 20 * 1000
+                },
+                yAxis: {
+                    minPadding: 0.2,
+                    maxPadding: 0.2,
+                    title: {
+                        text: 'Value',
+                        margin: 80
+                    }
+                },
+                plotOptions: {
+                    series: {
+                        threshold: 0
+                    }
+                },
+
+                series: [{
+                    name: 'HeartRate data',
+                    data: [],
+                    zones: [{
+                        value: 60,
+                        color: '#7cb5ec'
+                    }, {
+                        value: 115,
+                        color: '#86f77e'
+                    }, {
+                        color: '#FC8F78'
+                    }]
+
+                }]
+            });
+
+        });
+    </script>
+</body>
+
+</html>

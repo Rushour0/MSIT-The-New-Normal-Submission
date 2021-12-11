@@ -1,0 +1,50 @@
+name: CoBand
+description: A project to make medical tourism easy & convenient.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 0.0.2+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  http: ^0.13.0
+  syncfusion_flutter_charts: ^19.3.48
+  shared_preferences: ^2.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  fonts:
+    - family: Dandelion
+      fonts:
+        - asset: fonts/Dandelion-Regular.ttf
+    
+    - family: Montserrat
+      fonts:
+        - asset: fonts/Montserrat-Regular.otf
+
+    - family: Samarkan
+      fonts:
+        - asset: fonts/Samarkan-Regular.ttf
+
+    - family: SantaReindeer
+      fonts:
+        - asset: fonts/Santa-Reindeer.ttf
+    - family: Cotton Butter
+      fonts:
+        - asset: fonts/Cotton Butter.ttf
+    - family: BebasNeue
+      fonts:
+        - asset: fonts/BebasNeue-Regular.ttf
+  assets:
+    - img/
+  uses-material-design: true

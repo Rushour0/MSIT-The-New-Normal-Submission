@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+
+    <title> CoBAND-19 dashboard </title>
+
+    <!--Headings -->
+
+
+    <!-- Bootstraps Java Scipts Links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+
+
+    <!-- JQuery links  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <!--High CHART LIVE  -->
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/highcharts-more.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+
+
+</head>
+
+<body style="background-color: #889EEA ; text-align:center">
+
+    <h1 style="margin-top: 25px;">CoBAND-19</h1>
+    <p> Organization's COVID status dashboard </p>
+    <style>
+        img {
+            width: 25%;
+            height: 25%;
+        }
+    </style>
+    <img src="https://raw.githubusercontent.com/Rushour0/MSIT-The-New-Normal-Submission/main/Web%20Versions/web_v2/templates/main_icon.png"
+        alt="Icon">
+    <br>
+    <div>
+        <h1 class="temp_value0"
+            style=" background-color: white ;float:left;border-radius: 1000px;margin-left: 350px;width: 500px">
+            Sensor : </h1>
+        <h1 class="temp_value1"
+            style="background-color: white ;float:right;border-radius: 1000px;margin-right: 350px;width: 500px">
+            Sensor : </h1>
+        <hr style="clear:both;" />
+
+    </div>
+    <br>
+    <div>
+        <h1 class="spo2_value0"
+            style=" background-color: white ;float:left;border-radius: 1000px;margin-left: 350px;width: 500px">Sensor :
+        </h1>
+
+        <h1 class="spo2_value1"
+            style="background-color: white ;float:right;border-radius: 1000px;margin-right: 350px;width: 500px">Sensor :
+        </h1>
+        <hr style="clear:both;" />
+
+    </div>
+    <br>
+    <div>
+        <h1 class="hr_value0"
+            style=" background-color: white ;float:left;border-radius: 1000px;margin-left: 350px;width: 500px">Sensor :
+        </h1>
+        <h1 class="hr_value1"
+            style="background-color: white ;float:right;border-radius: 1000px;margin-right: 350px;width: 500px">Sensor :
+        </h1>
+        <hr style="clear:both;" />
+
+    </div>
+    <br>
+
+    <!--<div class="jumbotron" style="background-color: #889EEA ; text-align:center">
+    </div>
+    <div class="container-fluid"> -->
+    <!-- Example row of columns -->
+
+    <div class="row">
+        <div class="container-fluid" id="data-hr">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="container-fluid" id="data-spo2">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="container-fluid" id="data-temp">
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        var chart;
+        const timezone = new Date().getTimezoneOffset();
+        Highcharts.setOptions({
+            global: {
+                timezoneOffset: timezone
+            }
+        });
+        var charthr;
+        var chartspo2;
+
+        function requestData() {
+            // Ajax call to get the Data from Flask
+            var requests = $.get('/data');
+
+            var tm = requests.done(function (result) {
+                console.log(result);
+                // console.log(result[0]);
+                // console.log(result[1]);
+                console.log(Object.keys(result).length);
+                if (result != ["No more data"]) {
+                    var serieshr = charthr.series[0],
+                        shifthr = serieshr.data.length > 20;
+
+                    // spo2
+                    var seriesspo2 = chartspo2.series[0],
+                        shiftspo2 = seriesspo2.data.length > 20;
+
+                    var seriestemp = charttemp.series[0],
+                        shifttemp = seriestemp.data.length > 20;
+
+                    // Add the Point
+                    // Time hr
+                    for (i in result) {
+                        var data1 = [result[i]["_id"], result[i]["hr_value"]];
+
+                        var data2 = [result[i]["_id"], result[i]["spo2_value"]];
+
+                        var data3 = [result[i]["_id"], result[i]["temperature_value"]];
+                        charthr.series[i].addPoint(data1, true, shifthr);
+                        chartspo2.series[i].addPoint(data2, true, shiftspo2);
+                        charttemp.series[i].addPoint(data3, true, shifttemp);
+                        $(`.temp_value${i}`).text(`Temp. of person ${parseInt(i) + 1} : ` + (data3[1]));
+
+                        $(`.spo2_value${i}`).text(`SPO2 of person ${parseInt(i) + 1} : ` + (data2[1]));
+
+                        $(`.hr_value${i}`).text(`Heart rate of person ${parseInt(i) + 1} : ` + (data1[1]));
+
+                        if (data3[1] > 100) {
+                            $(`.temp_value${i}`).css("color", "red");
+                            window.alert(`Temperature is too high for person ${parseInt(i) + 1}`);
+                        }
+                        else {
+                            $(`.temp_value${i}`).css("color", "green");
+                        }
+
+                        if (data2[1] < 95) {
+                            $(`.spo2_value${i}`).css("color", "red");
+                            window.alert(`SPO2 is low for person ${parseInt(i) + 1}`);
+                        } else {
+                            $(`.spo2_value${i}`).css("color", "green");
+                        }
+                        if (data1[1] > 120) {
+                            $(`.hr_value${i}`).css("color", "red");
+                        } else {
+                            $(`.hr_value${i}`).css("color", "green");
+                        }
+
+                    }
+
+
+                    // charthr.series[0].addPoint(data1, true, shifthr);
+                    // chartspo2.series[0].addPoint(data2, true, shiftspo2);
+                    // charttemp.series[0].addPoint(data3, true, shifttemp);
+                    // charthr.series[1].addPoint(data1, true, shifthr);
+                    // chartspo2.series[1].addPoint(data2, true, shiftspo2);
+                    // charttemp.series[1].addPoint(data3, true, shifttemp);
+
+                }
+                // call it again after few seconds
+                setTimeout(requestData, 5000);
+
+            });
+        }
+
+        $(document).ready(function () {
+            // --------------Chart 1 ----------------------------
+            charthr = new Highcharts.Chart({
+                chart:
+                {
+                    renderTo: 'data-hr',
+                    defaultSeriesType: 'spline',
+                    events: {
+                        load: requestData
+                    }
+                },
+                title: {
+                    text: 'LIVE HEART RATE'
+                },
+                xAxis: {
+                    type: 'datetime',
+                    tickPixelInterval: 150,
+                    maxZoom: 20 * 1000
+                },
+                yAxis: {
+                    minPadding: 0.2,
+                    maxPadding: 0.2,
+                    title: {
+                        text: 'Value',
+                        margin: 80
+                    }
+                },
+                plotOptions: {
+                    series: {
+                        threshold: 0
+                    }
+                },
+
+                series: [{
+                    name: 'Heartrate 1',
+                    data: [],
+                    zones: [{
+                        value: 60,
+                        color: '#7cb5ec'
+                    }, {
+                        value: 115,
+                        color: '#86f77e'
+                    }, {
+                        color: '#FC8F78'
+                    }
+                    ]
+
+                },
+                {
+                    name: 'Heartrate 2',
+                    data: [],
+                    zones: [{
+                        value: 60,
+                        color: '#7cb5ec'
+                    }, {
+                        value: 115,
+                        color: '#86f77e'
+                    }, {
+                        color: '#FC8F78'
+                    }
+                    ]
+                }
+
+                ],
+            });
+            // --------------Chart 1 Ends - -----------------
+
+            chartspo2 = new Highcharts.Chart({
+                chart:
+                {
+                    renderTo: 'data-spo2',
+                    defaultSeriesType: 'spline',
+                    events: {
+                        load: requestData
+                    }
+                },
+                title:
+                {
+                    text: 'spo2'
+                },
+                xAxis: {
+                    type: 'datetime',
+                    tickPixelInterval: 150,
+                    maxZoom: 20 * 1000
+                },
+                yAxis: {
+                    minPadding: 0.2,
+                    maxPadding: 0.2,
+                    title: {
+                        text: 'Value',
+                        margin: 80
+                    }
+                },
+                plotOptions: {
+                    series: {
+                        threshold: 85
+                    }
+                },
+
+                series: [{
+                    lineColor: '#1d82b8',
+                    name: 'spo2 1',
+                    data: [],
+                    zones: [{
+                        value: 95,
+                        color: '#FC8F78'
+                    }, {
+                        value: 100,
+                        color: '#86f77e'
+                    }]
+
+                },
+                {
+                    lineColor: '#1d82b8',
+                    name: 'spo2 2',
+                    data: [],
+                    zones: [{
+                        value: 95,
+                        color: '#FC8F78'
+                    }, {
+                        value: 100,
+                        color: '#86f77e'
+                    }]
+                }]
+
+            });
+            // --------------Chart 2 Ends - -----------------
+
+            charttemp = new Highcharts.Chart({
+                chart:
+                {
+                    renderTo: 'data-temp',
+                    defaultSeriesType: 'spline',
+                    events: {
+                        load: requestData
+                    }
+                },
+                title:
+                {
+                    text: 'temperature'
+                },
+                xAxis: {
+                    type: 'datetime',
+                    tickPixelInterval: 150,
+                    maxZoom: 20 * 1000
+                },
+                yAxis: {
+                    minPadding: 0.2,
+                    maxPadding: 0.2,
+                    title: {
+                        text: 'Value',
+                        margin: 80
+                    }
+                },
+                plotOptions: {
+                    series: {
+                        threshold: 95
+                    }
+                },
+
+                series: [{
+                    lineColor: '#1d82b8',
+                    name: 'temperature 1',
+                    data: [],
+                    zones: [{
+                        value: 97,
+                        color: '#7cb5ec'
+                    }, {
+                        value: 100,
+                        color: '#86f77e'
+                    }, {
+                        color: '#FC8F78'
+                    }
+                    ]
+
+                },
+                {
+                    lineColor: '#1d82b8',
+                    name: 'temperature 2',
+                    data: [],
+                    zones: [{
+                        value: 97,
+                        color: '#7cb5ec'
+                    }, {
+                        value: 100,
+                        color: '#86f77e'
+                    }, {
+                        color: '#FC8F78'
+                    }
+                    ]
+
+                }]
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>

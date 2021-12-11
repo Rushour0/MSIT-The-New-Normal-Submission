@@ -1,0 +1,90 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.rushour0.coband"
+4    android:versionCode="1"
+5    android:versionName="0.0.2" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="20"
+9        android:targetSdkVersion="30" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:3:5-67
+14-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:3:22-64
+15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+15-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:4:5-81
+15-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:4:22-78
+16    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+16-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:5:5-80
+16-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:5:22-77
+17
+18    <application
+18-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:8:4-41:19
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.1.0] C:\Users\Rushikesh Patade\.gradle\caches\transforms-2\files-2.1\2e94107f30f39be366a17347c2bf100b\core-1.1.0\AndroidManifest.xml:24:18-86
+20        android:debuggable="true"
+21        android:icon="@mipmap/ic_launcher"
+21-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:10:9-43
+22        android:label="coband" >
+22-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:9:9-31
+23        <activity
+23-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:11:9-35:20
+24            android:name="com.example.coband.MainActivity"
+24-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:12:13-41
+25            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+25-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:15:13-163
+26            android:hardwareAccelerated="true"
+26-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:16:13-47
+27            android:launchMode="singleTop"
+27-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:13:13-43
+28            android:theme="@style/LaunchTheme"
+28-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:14:13-47
+29            android:windowSoftInputMode="adjustResize" >
+29-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:17:13-55
+30
+31            <!--
+32                 Specifies an Android theme to apply to this Activity as soon as
+33                 the Android process has started. This theme is visible to the user
+34                 while the Flutter UI initializes. After that, this theme continues
+35                 to determine the Window background behind the Flutter UI.
+36            -->
+37            <meta-data
+37-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:22:13-25:17
+38                android:name="io.flutter.embedding.android.NormalTheme"
+38-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:23:15-70
+39                android:resource="@style/NormalTheme" />
+39-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:24:15-52
+40            <!--
+41                 Displays an Android View that continues showing the launch screen
+42                 Drawable until Flutter paints its first frame, then this splash
+43                 screen fades out. A splash screen is useful to avoid any visual
+44                 gap between the end of Android's launch screen and the painting of
+45                 Flutter's first frame.
+46            -->
+47            <intent-filter>
+47-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:31:13-34:29
+48                <action android:name="android.intent.action.MAIN" />
+48-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:32:17-68
+48-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:32:25-66
+49
+50                <category android:name="android.intent.category.LAUNCHER" />
+50-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:33:17-76
+50-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:33:27-74
+51            </intent-filter>
+52        </activity>
+53        <!--
+54             Don't delete the meta-data below.
+55             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+56        -->
+57        <meta-data
+57-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:38:9-40:33
+58            android:name="flutterEmbedding"
+58-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:39:13-44
+59            android:value="2" />
+59-->D:\App Dev - Flutter\MSIT The New Normal Submission\app_v2\android\app\src\main\AndroidManifest.xml:40:13-30
+60    </application>
+61
+62</manifest>
