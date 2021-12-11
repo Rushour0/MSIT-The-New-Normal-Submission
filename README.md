@@ -22,4 +22,4 @@ The final version of the application has been deployed on this repository.
 ![Screenshot_1637150212](https://user-images.githubusercontent.com/72869428/145687725-b092c83c-0820-42e1-8a48-913fd07fc13d.png)![Screenshot_1639246616](https://user-images.githubusercontent.com/72869428/145687777-dd83bfce-435d-4b82-b9ee-ac058ea38dc0.png) ![Screenshot_1639246629](https://user-images.githubusercontent.com/72869428/145687627-caad0e55-5da7-4b26-9416-404c181adb9c.png) ![Screenshot_1639246603](https://user-images.githubusercontent.com/72869428/145687739-db891604-6c1c-41e6-875e-f18304d40321.png) ![Screenshot_1639246605](https://user-images.githubusercontent.com/72869428/145687752-19ee31de-3c42-46a5-b2f7-79e1fe096361.png) ![Screenshot_1637149289](https://user-images.githubusercontent.com/72869428/145687706-9182a8b3-1abb-4090-9813-9d4bc9429413.png) ![Screenshot_1639246609](https://user-images.githubusercontent.com/72869428/145687764-0746700f-5ad0-4e1b-b28b-a6f6d1bda4c1.png)
 
 ## Screenshots for the admin-side dashboard
-
+![v2](https://user-images.githubusercontent.com/72869428/145688194-6f4e6604-8eb0-4a55-b752-f01cdf335b76.jpeg)
