@@ -8,7 +8,9 @@
 
 ## Prototype
 
-The prototype thus includes both a hardware and a software part developed through three versions to get to the final product. Our existing prototype versions have been explained with all their semantics in this [report](https://docs.google.com/document/d/1xhUftrHGRukB2wiMmyU79MKb7XuntHSvzRcDs5I9J3w/edit?usp=sharing). The idea behind making multiple versions was to ensure that the developing hardware adds to the functionalities of the software end in a manner that would improvise on the existing product and allow for further scaling / improvements without rendering the mobile application / website for our product entirely dysfunctional. The future could see the development of the physical hardware further with the application and the website dashboard being intact.
+The prototype thus includes both a hardware and a software part developed through three versions to get to the final product. Our existing prototype versions have been explained with all their semantics in this [report](https://docs.google.com/document/d/1xhUftrHGRukB2wiMmyU79MKb7XuntHSvzRcDs5I9J3w/edit?usp=sharing). 
+
+The idea behind making multiple versions was to ensure that the developing hardware adds to the functionalities of the software end in a manner that would improvise on the existing product and allow for further scaling / improvements without rendering the mobile application / website for our product entirely dysfunctional. The future could see the development of the physical hardware further with the application and the website dashboard being intact.
 
 The software includes admin side dashboard and client side dashboard. A python web flask is used to make the admin side dashboard. Flutter technology is used in the client side dashboard. Because of lack of direct hardware data fetching, the data for the dashboard is being fetched from Cloudant after uploading it from a remote device. The web site & client side app dashboard are dynamic in nature and are updated as new data is realised by the web / mobile app. Dynamic updating and health analytics make it easier for the user to understand. 
 
