@@ -12,6 +12,6 @@ The prototype thus includes both a hardware and a software part developed throug
 
 The software includes admin side dashboard and client side dashboard. A python web flask is used to make the admin side dashboard. Flutter technology is used in the client side dashboard. Because of lack of direct hardware data fetching, the data for the dashboard is being fetched from Cloudant after uploading it from a remote device. The web site & client side app dashboard are dynamic in nature and are updated as new data is realised by the web / mobile app. Dynamic updating and health analytics make it easier for the user to understand. 
 
-The final version's admin-side dashboard is on this [site](https://coband19.jxt1n.repl.co/)
+The final version's admin-side dashboard is on this [site](https://coband19.jxt1n.repl.co/).
 
 The final version of the application has been deployed on this repository.
