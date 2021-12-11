@@ -21,20 +21,19 @@ The final version of the application has been deployed on this repository.
 ## Screenshots of mobile application
 
 ### Splash Screen
-![Screenshot_1637150212](https://user-images.githubusercontent.com/72869428/145687374-c51aaf65-4122-43c0-b95d-8fd2c0e9e499.png)
-### Log in page 
-![Screenshot_1639246616](https://user-images.githubusercontent.com/72869428/145687395-e030ee9c-5318-4abb-9f54-59764750f54a.png)
+![Screenshot_1637150212](https://user-images.githubusercontent.com/72869428/145687725-b092c83c-0820-42e1-8a48-913fd07fc13d.png)
+### Log in page
+![Screenshot_1639246616](https://user-images.githubusercontent.com/72869428/145687777-dd83bfce-435d-4b82-b9ee-ac058ea38dc0.png)
 ### Loading page
 ![Screenshot_1639246629](https://user-images.githubusercontent.com/72869428/145687627-caad0e55-5da7-4b26-9416-404c181adb9c.png)
 ### Hamburger Menu
-![Screenshot_1639246603](https://user-images.githubusercontent.com/72869428/145687491-17fb7808-d4b3-420b-ae75-84f858d1b568.png)
+![Screenshot_1639246603](https://user-images.githubusercontent.com/72869428/145687739-db891604-6c1c-41e6-875e-f18304d40321.png)
 ###  Tab 1
-![Screenshot_1639246605](https://user-images.githubusercontent.com/72869428/145687413-564e7e6f-ef38-473f-8007-65721d99fec7.png)
+![Screenshot_1639246605](https://user-images.githubusercontent.com/72869428/145687752-19ee31de-3c42-46a5-b2f7-79e1fe096361.png)
 ###  Tab 2
-![Screenshot_1637149289](https://user-images.githubusercontent.com/72869428/145687427-61663ba0-c4de-49ea-bda3-33bfe0adeabf.png)
+![Screenshot_1637149289](https://user-images.githubusercontent.com/72869428/145687706-9182a8b3-1abb-4090-9813-9d4bc9429413.png)
 ###  Tab 3
-![Screenshot_1639246609](https://user-images.githubusercontent.com/72869428/145687436-5d95a1a6-7e15-437c-b4c8-5b6d5c420d50.png)
-
+![Screenshot_1639246609](https://user-images.githubusercontent.com/72869428/145687764-0746700f-5ad0-4e1b-b28b-a6f6d1bda4c1.png)
 
 ## Screenshots for the admin-side dashboard
 
