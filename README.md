@@ -17,3 +17,11 @@ The software includes admin side dashboard and client side dashboard. A python w
 The final version's admin-side dashboard is on this [site](https://coband19.jxt1n.repl.co/).
 
 The final version of the application has been deployed on this repository.
+
+## Screenshots of admin-side dashboard & mobile application
+
+![WhatsApp Image 2021-12-11 at 23 30 26](https://user-images.githubusercontent.com/74127653/145687082-78cb3afb-1224-47ca-aa3c-ffe510d44b9a.jpeg)
+![WhatsApp Image 2021-12-11 at 23 30 26 (1)](https://user-images.githubusercontent.com/74127653/145687083-b987481c-166b-498d-a48e-82c182c9806e.jpeg)
+![WhatsApp Image 2021-12-11 at 23 30 26 (2)](https://user-images.githubusercontent.com/74127653/145687084-0acada31-fbda-477d-9b26-7266e65885ea.jpeg)
+![WhatsApp Image 2021-12-11 at 23 30 26 (3)](https://user-images.githubusercontent.com/74127653/145687085-93d6ceed-af79-4714-9b5b-90563cc0630f.jpeg)
+![WhatsApp Image 2021-12-11 at 23 30 26 (4)](https://user-images.githubusercontent.com/74127653/145687086-288bb445-2917-4051-ab9f-3ecf5c8a337f.jpeg)
